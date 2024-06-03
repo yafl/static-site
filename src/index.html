@@ -439,9 +439,22 @@
         >
           === Deployment preview nginx cache test ===
         </h1>
-        <h2 class="mt-2 text-2xl tracking-tight text-white sm:text-5xl">
-          May 29th - 3:28 PM
+        <h2 id="current-time" class="mt-2 text-2xl tracking-tight text-white sm:text-5xl">
         </h2>
+        <script>
+    function updateTime() {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+      const formattedDate = now.toLocaleDateString(undefined, options);
+      document.getElementById('current-time').innerText = formattedDate;
+    }
+
+    // Update the time immediately when the page loads
+    updateTime();
+
+    // Optionally, update the time every second
+    setInterval(updateTime, 1000);
+  </script>
       </div>
     </main>
   </body>
